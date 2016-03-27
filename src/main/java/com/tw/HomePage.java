@@ -11,6 +11,7 @@ public class HomePage {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Model model) {
         model.addAttribute("sourceLocations", DataSource.sourceLocations);
+        model.addAttribute("destinationLocations", DataSource.destinationLocations);
         return "home";
     }
 }

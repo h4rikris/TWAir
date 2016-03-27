@@ -37,4 +37,14 @@ public class HomePageTest {
 
         verify(model, times(1)).addAttribute(eq("sourceLocations"), anyCollection());
     }
+
+    @Test
+    public void shouldAddDestinationLocationsToModel() {
+
+        homePage.home(model);
+
+        verify(model, times(1)).addAttribute(eq("destinationLocations"), anyCollection());
+    }
+
+
 }

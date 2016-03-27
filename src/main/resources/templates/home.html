@@ -9,6 +9,9 @@
         <select name="sourceLocation" required="required">
             <option th:each="location : ${sourceLocations}" th:text="${location}" th:value="${location}"></option>
         </select>
+        <select name="destinationLocations" required="required">
+            <option th:each="location : ${destinationLocations}" th:text="${location}" th:value="${location}"></option>
+        </select>
     </div>
 </body>
 </html>
