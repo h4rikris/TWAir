@@ -6,12 +6,27 @@
 </head>
 <body>
     <div>
-        <select name="sourceLocation" required="required">
-            <option th:each="location : ${sourceLocations}" th:text="${location}" th:value="${location}"></option>
-        </select>
-        <select name="destinationLocations" required="required">
-            <option th:each="location : ${destinationLocations}" th:text="${location}" th:value="${location}"></option>
-        </select>
+        <form action="/search" method="POST">
+            <select name="sourceLocation" required="required">
+                <option th:each="location : ${sourceLocations}" th:text="${location}" th:value="${location}"></option>
+            </select>
+            <select name="destinationLocation" required="required">
+                <option th:each="location : ${destinationLocations}" th:text="${location}" th:value="${location}"></option>
+            </select>
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
+    <div>
+        <table border="1">
+            <th>From</th>
+            <th>To</th>
+            <th>Model</th>
+            <tr th:each="flight:${flights}">
+                <td th:text="${flight.source}"></td>
+                <td th:text="${flight.destination}"></td>
+                <td th:text="${flight.model}"></td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
