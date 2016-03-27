@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" />
     <title>TW Air</title>
 </head>
 <body>
-
+    <div>
+        <select name="sourceLocation" required="required">
+            <option th:each="location : ${sourceLocations}" th:text="${location}" th:value="${location}"></option>
+        </select>
+    </div>
 </body>
 </html>
